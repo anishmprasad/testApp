@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Embibe App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://assets.embibe.com/staging/images/common/membibe.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://assets.embibe.com/google-fonts.css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Register.StartupHook("NativeMML Jax Ready",function () {
+        document.getElementById("hide-math").disabled = true;
+      });
+      MathJax.Hub.Config({ skipStartupTypeset: true, messageStyle: "none",
+            "HTML-CSS": { showMathMenu: false, linebreaks: {automatic: true, width: "container"} },
+            tex2jax: {preview: "none", inlineMath: [["$","$"],["\\(","\\)"]]},
+          CommonHTML: { linebreaks: { automatic: true } }
+        });
+    </script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <% for (key in htmlWebpackPlugin.files.css) { %>
+        <link href="<%= htmlWebpackPlugin.files.css[key] %>" rel="stylesheet">
+    <% } %>
+  </head>
+  <body>
+    <div id="root"></div>
+     <script type="text/javascript">
+         window.emContext||(emContext={});
+         emContext.data={"admin":{"admin_email":"techsupport@embibe.com","user_email":null},"user":{}};
+    </script>
+    <noscript>Please enable JavaScript to view this website.</noscript>
+    <% for (key in htmlWebpackPlugin.files.js) { %>
+        <script src="<%= htmlWebpackPlugin.files.js[key] %>" defer>
+        </script>
+    <% } %>
+  </body>
+</html>
