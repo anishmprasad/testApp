@@ -7,8 +7,9 @@ import ReactDOM from 'react-dom';
 import {debounce} from 'throttle-debounce';
 
 export default class DynamicRoute extends Component {
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
+        console.log(this.props.match.params)
     }
     render() {
         return (

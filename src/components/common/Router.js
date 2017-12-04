@@ -43,7 +43,7 @@ class Router extends Component {
       <div>
         <Switch>
           <Route exact path='/helloworld' component={HelloWorld}/>
-          <Route exact path='/study/learn/:entityType/:entityCode' component={DynamicRoute}/>
+          <Route exact path='/dynamicroute/:entityType/:entityCode' component={DynamicRoute}/>
         </Switch>
       </div>
     )
