@@ -6,6 +6,8 @@ import { withRouter } from 'react-router';
 import ReactDOM from 'react-dom';
 import {debounce} from 'throttle-debounce';
 import 'styleCommon/styles.scss';
+import DynamicRoute from 'components/DynamicRoute';
+import HelloWorld from 'components/HelloWorld'
 
 
 class Router extends Component {
@@ -35,18 +37,13 @@ class Router extends Component {
   hideHeaderOnFocus(value) {
     
   }
-  onRouteChange() {
-    
-  }
+
   render() {
     return (
       <div>
-        <Switch onChange={this.onRouteChange}>
-          <Route exact path='/signup' component={SignupPage}/>
-          <Route exact path='/study/learn/:entityType/:entityCode' component={LearnResults}/>
-          <Route exact path='/practice' component={Practice}/>
-          <Route exact path='/reset-password' component={VerificationPage}/>
-          <Route exact path='/verification-page' component={EmailVerificationPage}/>
+        <Switch>
+          <Route exact path='/helloworld' component={HelloWorld}/>
+          <Route exact path='/study/learn/:entityType/:entityCode' component={DynamicRoute}/>
         </Switch>
       </div>
     )
