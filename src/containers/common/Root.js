@@ -12,14 +12,6 @@ class Root extends Component {
       onEnter: false
     };
   }
-  componentWillMount() {
-    
-  }
-
-  setLandingCookie() {
-    
-  }
-
   render() {
       return (
         <Provider store={this.props.store}>
@@ -37,13 +29,13 @@ Root.propTypes = {
   store: PropTypes.object
 };
 
-function mapStateToProps(state) {
-  return {
-    state
-  };
-}
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ }, dispatch);
-}
+// function mapStateToProps(state) {
+//   return {
+//     state
+//   };
+// }
+// function mapDispatchToProps(dispatch) {
+//   return bindActionCreators({ }, dispatch);
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Root);
+export default Root;
