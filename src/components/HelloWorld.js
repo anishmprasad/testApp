@@ -15,6 +15,7 @@ export default class HelloWorld extends Component {
         return (
           <div>
             <h1>HelloWorld</h1>
+            <img src={image_path("/react-image.png")} alt={"react-image"}/>
           </div>
         )
       }
