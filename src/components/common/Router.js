@@ -8,52 +8,28 @@ import {debounce} from 'throttle-debounce';
 import 'styleCommon/styles.scss';
 import DynamicRoute from 'components/DynamicRoute';
 import HelloWorld from 'components/HelloWorld'
+import Graph from '../Graph';
+import Home from 'components/Home'
 
 
-class Router extends Component {
-  constructor(props){
-      super(props);
-      
-  }
-  componentWillMount(){
-    
-  }
-  componentDidMount(){
-    const dom = ReactDOM.findDOMNode (this);
-    dom.addEventListener ('mouseover', e => this.handleMouseDown (e));
-  }
-
-  componentWillReceiveProps(nextProps){
-    
-  }
-
-  handleMouseDown(e){
-  }
-
-  contentBlockFlag(p){
-    
-  }
-
-  hideHeaderOnFocus(value) {
-    
-  }
+export default class Router extends Component {
 
   render() {
-    return (
-      <div>
+    return <div>
         <Switch>
-          <Route exact path='/helloworld' component={HelloWorld}/>
-          <Route exact path='/dynamicroute/:entityType/:entityCode' component={DynamicRoute}/>
+          <Route exact path="/" component={Home} />
+          <Route exact path="/helloworld" component={HelloWorld} />
+          <Route exact path="/dynamicroute/:entityType/:entityCode" component={DynamicRoute} />
+          <Route exact path="/graph" component={Graph} />
         </Switch>
-      </div>
-    )
+      </div>;
   }
 }
 
-function mapStateToProps(state) {
-  return {
-    state
-  };
-}
+// function mapStateToProps(state) {
+//   return {
+//     state
+//   };
+// }
 
-export default withRouter(connect(mapStateToProps)(Router));
+// export default withRouter(connect(mapStateToProps)(Router));
